@@ -1,295 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonali Mutton Bhakri - Authentic Maharashtrian Cuisine in Nashik</title>
-    <style>
-        :root {
-            --primary: #b32d00;
-            --secondary: #ff8c00;
-            --dark: #1a1a1a;
-            --light: #fff8f0;
-            --gray: #666;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonali Mutton Bhakri - Authentic Maharashtrian Cuisine</title>
+  <style>
+    :root {
+      --primary: #d9381e;
+      --accent: #f59e0b;
+      --bg-dark: #121212;
+      --bg-card: #1e1e1e;
+      --text-light: #f3f4f6;
+      --text-muted: #9ca3af;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
 
-        header {
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-        }
+    /* Hero Section */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      text-align: center;
+      padding: 5rem 1rem;
+      border-bottom: 4px solid var(--primary);
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
+    header p {
+      font-size: 1.2rem;
+      color: #fff;
+    }
 
-        .rating-badge {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-top: 1rem;
-        }
+    /* Navigation */
+    nav {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #333;
+    }
 
-        nav {
-            background-color: var(--dark);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
 
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
+    nav a:hover {
+      color: var(--accent);
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 1rem 1.5rem;
-            display: block;
-            font-weight: 500;
-        }
+    /* Main Container */
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
 
-        nav a:hover {
-            background-color: var(--primary);
-        }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--accent);
+      margin: 2.5rem 0 1.5rem 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
+    /* Menu Cards Grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
 
-        .section-title {
-            text-align: center;
-            color: var(--primary);
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            border-bottom: 2px solid var(--primary);
-            display: inline-block;
-            width: 100%;
-            padding-bottom: 0.5rem;
-        }
+    .card {
+      background-color: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      border: 1px solid #333;
+      transition: transform 0.3s ease;
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
 
-        .menu-category {
-            margin-bottom: 2.5rem;
-        }
+    .card-content {
+      padding: 1.2rem;
+    }
 
-        .menu-category h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 0.3rem;
-        }
+    .card-title {
+      font-size: 1.3rem;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
 
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.8rem;
-        }
+    .badge {
+      background-color: var(--primary);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
 
-        .menu-item-name {
-            font-weight: 600;
-        }
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
 
-        .menu-item-price {
-            color: var(--primary);
-            font-weight: bold;
-        }
+    /* Info Section */
+    .info-box {
+      background-color: var(--bg-card);
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 5px solid var(--accent);
+      margin-top: 2rem;
+    }
 
-        .info-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .info-box h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 3rem;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #000;
+      color: var(--text-muted);
+      margin-top: 3rem;
+      border-top: 1px solid #333;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Sonali Mutton Bhakri</h1>
-        <p>Authentic Maharashtrian Non-Veg & Veg Delicacies</p>
-        <div class="rating-badge">★ 3.9 (4,230+ Reviews) | ₹200–₹400 per person</div>
-    </header>
+  <header>
+    <h1>Sonali Mutton Bhakri</h1>
+    <p>Authentic Maharashtrian Non-Veg & Veg Delicacies</p>
+  </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#location">Location & Hours</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#location">Visit Us</a>
+  </nav>
 
-    <div class="container">
-        
-        <section id="about" style="margin-bottom: 3rem;">
-            <h2 class="section-title">About Us</h2>
-            <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
-                Welcome to <strong>Sonali Mutton Bhakri</strong>, Nashik's go-to destination for rich, flavorful, and traditional Maharashtrian dishes. Famous for our signature Mutton Thali, Mutton Sukha, and hot Bajra Bhakris, we bring you the authentic taste of local spices and traditional recipes.
-            </p>
-        </section>
+  <div class="container">
 
-        <section id="menu" style="margin-bottom: 3rem;">
-            <h2 class="section-title">Our Menu Highlights</h2>
-            
-            <div class="grid">
-                <div class="card">
-                    <div class="menu-category">
-                        <h3>Mutton Specialities</h3>
-                        <div class="menu-item">
-                            <span class="menu-item-name">Special Mutton Thali</span>
-                            <span class="menu-item-price">Popular</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-item-name">Mutton Curry</span>
-                            <span class="menu-item-price">Special</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-item-name">Mutton Handi</span>
-                            <span class="menu-item-price">Special</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-item-name">Mutton Kheema</span>
-                            <span class="menu-item-price">Special</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-item-name">Mutton Paya Soup</span>
-                            <span class="menu-item-price">Starter</span>
-                        </div>
-                    </div>
-                </div>
+    <!-- About Section -->
+    <section id="about" class="info-box">
+      <h2>Authentic Local Taste</h2>
+      <p>Welcome to Sonali Mutton Bhakri, Nashik's go-to destination for rich, flavorful, and traditional Maharashtrian dishes. Famous for our signature Mutton Thali, Mutton Sukha, and hot Bajra Bhakris made with authentic local spices.</p>
+    </section>
 
-                <div class="card">
-                    <div class="menu-category">
-                        <h3>Chicken & Egg</h3>
-                        <div class="menu-item">
-                            <span class="menu-item-name">Chicken Handi</span>
-                            <span class="menu-item-price">Special</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-item-name">Chicken Fry Curry</span>
-                            <span class="menu-item-price">Popular</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-item-name">Egg Curry</span>
-                            <span class="menu-item-price">Popular</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-item-name">Egg Bhurji</span>
-                            <span class="menu-item-price">Quick Bite</span>
-                        </div>
-                    </div>
-                </div>
+    <!-- Non-Veg Menu -->
+    <h2 id="menu" class="section-title">Mutton & Chicken Specials</h2>
+    <div class="menu-grid">
+      
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Special Mutton Thali">
+        <div class="card-content">
+          <div class="card-title">
+            <span>Special Mutton Thali</span>
+            <span class="badge">Popular</span>
+          </div>
+          <p class="card-desc">Served with Spicy Mutton Curry, Mutton Sukha, Tambda Rassa, and Hot Bajra Bhakri.</p>
+        </div>
+      </div>
 
-                <div class="card">
-                    <div class="menu-category">
-                        <h3>Veg & Breads</h3>
-                        <div class="menu-item">
-                            <span class="menu-item-name">Shev Bhaji</span>
-                            <span class="menu-item-price">Popular</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-item-name">Bajra / Jowar Bhakri</span>
-                            <span class="menu-item-price">Fresh</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-item-name">Nagli Papad</span>
-                            <span class="menu-item-price">Side</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80" alt="Chicken Handi">
+        <div class="card-content">
+          <div class="card-title">
+            <span>Chicken Handi / Fry</span>
+            <span class="badge">Special</span>
+          </div>
+          <p class="card-desc">Tender chicken cooked in rich traditional Maharashtrian masala gravy.</p>
+        </div>
+      </div>
 
-        <section id="location">
-            <h2 class="section-title">Visit Us</h2>
-            <div class="grid">
-                <div class="info-box">
-                    <h4>Address</h4>
-                    <p>81, Ashwin Nagar Bus Stop, Swami Vivekanand Swimming Pool Road, Nashik, Maharashtra 422009, India</p>
-                </div>
-                <div class="info-box">
-                    <h4>Opening Hours</h4>
-                    <p><strong>Afternoon:</strong> Opens until 4:30 PM</p>
-                    <p><strong>Evening:</strong> Reopens at 7:00 PM – 10:30 PM</p>
-                </div>
-                <div class="info-box">
-                    <h4>Services Available</h4>
-                    <p>✔ Dine-in</p>
-                    <p>✔ Takeaway</p>
-                    <p>✔ Delivery (Zomato / Swiggy)</p>
-                </div>
-            </div>
-        </section>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80" alt="Mutton Kheema">
+        <div class="card-content">
+          <div class="card-title">
+            <span>Mutton Kheema</span>
+            <span class="badge">Must Try</span>
+          </div>
+          <p class="card-desc">Slow-cooked minced mutton cooked with fresh onions, green chilies, and aromatic spices.</p>
+        </div>
+      </div>
 
     </div>
 
-    <footer>
-        <p>&copy; 2026 Sonali Mutton Bhakri, Nashik. All Rights Reserved.</p>
-    </footer>
+    <!-- Veg Menu Section -->
+    <h2 class="section-title">Veg Delicacies & Breads</h2>
+    <div class="menu-grid">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80" alt="Shev Bhaji">
+        <div class="card-content">
+          <div class="card-title">
+            <span>Maharashtrian Shev Bhaji</span>
+            <span class="badge">Veg</span>
+          </div>
+          <p class="card-desc">Crispy shev in spicy gravy, local Nashik favorite.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Bajra Bhakri">
+        <div class="card-content">
+          <div class="card-title">
+            <span>Bajra & Jowar Bhakri</span>
+            <span class="badge">Fresh</span>
+          </div>
+          <p class="card-desc">Traditionally prepared flatbreads roasted over open flame.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Location Info -->
+    <section id="location" class="info-box">
+      <h2>Visit Us</h2>
+      <p><strong>Address:</strong> 81, Ashwin Nagar Bus Stop, Swami Vivekanand Swimming Pool Road, Nashik, Maharashtra 422009</p>
+      <p><strong>Opening Hours:</strong> Afternoon (Till 4:30 PM) | Evening (7:00 PM – 10:30 PM)</p>
+      <p><strong>Services:</strong> Dine-in | Takeaway | Delivery via Zomato & Swiggy</p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Sonali Mutton Bhakri, Nashik. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
